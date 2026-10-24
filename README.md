@@ -14,13 +14,6 @@ Windows 下也可以直接双击 `code_stat_gui.py`。需要 Python 3.8 以上�
 **零硬依赖**，只用标准库。若环境中已装 `charset-normalizer`（`requests` 的传递依赖，通常已有），
 自动用它提升非 UTF-8 文件的编码识别率；没装也能正常运行。
 
-打包成单个 exe 发给别人：
-
-```bash
-pip install pyinstaller
-pyinstaller -F -w -n 代码统计工具 code_stat_gui.py
-```
-
 ## 统计口径
 
 ### 字数与行数
@@ -77,16 +70,6 @@ Windows 上 `st_ctime` 就是文件创建时间，`st_mtime` 是最后修改时�
 | 按语言 | 各语言的字符数、行数、注释行等，用于看语言占比 |
 | 跳过明细 | 什么原因跳过了多少东西、示例路径，以及读取失败的文件清单 |
 | 按目录 | 按一级子目录汇总，看哪个模块代码量最大 |
-
-## 导出
-
-- **导出本页 CSV**：导出当前标签页（含目录树，按缩进体现层级）
-- **导出全部 CSV**：一次导出 `summary.csv`、`files.csv`、`languages.csv`、
-  `directories.csv`、`skipped.csv` 五个文件
-- **导出完整 JSON**：含全部分类汇总、语言分布、跳过明细、每个文件的完整指标与时间
-- **导出 HTML 报告**：自包含的单文件报告，带汇总卡片、语言分布条形图，可直接分享
-
-CSV 一律写 `utf-8-sig`（带 BOM），Excel 打开不会中文乱码。
 
 ## 文件结构
 
